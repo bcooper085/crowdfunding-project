@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Account } from './account.model';
 import { ACCOUNTS } from './mock-accounts';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Injectable()
 export class AccountService {
+  accounts: FirebaseListObservable<any[]>;
 
-  constructor() { }
 
-  getAccounts() {
-    return ACCOUNTS;
+  constructor(private angularFire: AngularFire) {
+    this.accounts = angularFire.database.list('accounts');
+  }
+
+  getAccounts(){
+    return this.accounts;
   }
 
   getAccountById(accountId: number){

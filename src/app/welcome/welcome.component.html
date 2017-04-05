@@ -1,6 +1,6 @@
 <h1>Accounts:</h1>
 
-<div *ngFor="let account of accounts" (click)="goToDetailPage(account)" class="panel panel-default">
+<div *ngFor="let account of accounts | async" (click)="goToDetailPage(account)" class="panel panel-default">
   <div class="panel-body">
     <h3><em>{{account.name}}</em> by {{account.goal}}</h3>
   </div>
