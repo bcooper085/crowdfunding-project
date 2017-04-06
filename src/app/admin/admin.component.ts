@@ -17,8 +17,8 @@ export class AdminComponent implements OnInit {
 
   }
 
-  submitForm(name: string, description: string, goal: number) {
-    var newAccount: Account = new Account(name, description, goal);
+  submitForm(name: string, description: string, goal: number, category: string, image: string) {
+    var newAccount: Account = new Account(name, description, goal, category, image);
     this.accountService.addAccount(newAccount);
   }
 

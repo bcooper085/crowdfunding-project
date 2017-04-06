@@ -21,12 +21,28 @@
         <br>
         <input #newGoal>
       </div>
-      <button (click)="submitForm(newName.value, newDescription.value, newGoal.value); newName.value=''; newDescription.value=''; newGoal.value=''">Add Account</button>
+      <div>
+        <label> Account Category:</label>
+        <br>
+        <select>
+          <option #newCategory>Charity</option>
+          <option #newCategory>Products</option>
+          <option #newCategory>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Account Image:</label>
+        <br>
+        <input #newImage>
+      </div>
+      <br>
+      <button class="btn btn-primary" (click)="submitForm(newName.value, newDescription.value, newGoal.value, newImage.value, newCategory.value); newName.value=''; newDescription.value=''; newGoal.value=''; newImage.value=''; newCategory.value=''">Add Account</button>
     </div>
   </div>
 </div>
 
 <div>
   <app-welcome></app-welcome>
-  
+
 </div>

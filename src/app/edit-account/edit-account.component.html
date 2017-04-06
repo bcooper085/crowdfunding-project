@@ -10,6 +10,14 @@
 
 <label>New Account Goal:</label>
 <input [(ngModel)]="selectedAccount.goal">
+<br>
 
-<button (click)="beginUpdatingAccount(selectedAccount)">Update</button>
-<button (click)="beginDeletingAccount(selectedAccount)">Delete</button>
+<label>New Account Category:</label>
+<input [(ngModel)]="selectedAccount.category">
+<br>
+
+<label>New Account Image:</label>
+<input [(ngModel)]="selectedAccount.image">
+
+<button class="btn btn-warning" (click)="beginUpdatingAccount(selectedAccount)">Update</button>
+<button class="btn btn-danger" (click)="beginDeletingAccount(selectedAccount)">Delete</button>

@@ -1,12 +1,23 @@
-<h1>Accounts:</h1>
+<select (change)="onChange($event.target.value)">
+    <option value="allAccounts">All Accounts</option>
+    <option value="charities">Charities</option>
+    <option value="products">Products</option>
+    <option value="other">Other</option>
+</select>
 
-<div *ngFor="let account of accounts | async" class="panel panel-default">
-  <div class="panel-body">
-    <h3 (click)="goToDetailPage(account)"><em>{{account.name}}</em> Donation Goal: ${{account.goal}}</h3>
-    <div *ngIf="currentRoute === '/admin'">
-      {{account.description}}
-      <hr>
-      <app-edit-account [selectedAccount]="account"></app-edit-account>
+<h1>Accounts:</h1>
+<div class="account-display">
+  <div *ngFor="let account of accounts | async | category" class="panel panel-default">
+    <div class="panel-body">
+      <h3 (click)="goToDetailPage(account)"><em>{{account.name}}</em></h3>
+      <h4>Donation Goal: ${{account.goal}}</h4>
+      <h4>Category: {{account.category}}</h4>
+      <div *ngIf="currentRoute === '/admin'">
+        <p>Discription: {{account.description}}</p>
+        <img src="{{account.image}}">
+        <hr>
+        <app-edit-account [selectedAccount]="account"></app-edit-account>
+      </div>
     </div>
   </div>
 </div>
