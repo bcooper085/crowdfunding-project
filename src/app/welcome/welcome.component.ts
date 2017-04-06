@@ -13,6 +13,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class WelcomeComponent implements OnInit {
   accounts: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  filterByCategory: string = "allAccounts";
 
   constructor(private router: Router, private accountService: AccountService) {}
 
@@ -24,5 +25,7 @@ export class WelcomeComponent implements OnInit {
      this.router.navigate(['accounts', clickedAccount.$key]);
    };
 
-
+   onChange(optionFromMenu) {
+     this.filterByCategory = optionFromMenu;
+   }
 }

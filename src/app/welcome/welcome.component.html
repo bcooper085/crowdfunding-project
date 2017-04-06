@@ -7,7 +7,7 @@
 
 <h1>Accounts:</h1>
 <div class="account-display">
-  <div *ngFor="let account of accounts | async | category" class="panel panel-default">
+  <div *ngFor="let account of accounts | async | category:filterByCategory" class="panel panel-default">
     <div class="panel-body">
       <h3 (click)="goToDetailPage(account)"><em>{{account.name}}</em></h3>
       <h4>Donation Goal: ${{account.goal}}</h4>
