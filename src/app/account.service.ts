@@ -22,4 +22,16 @@ export class AccountService {
     return this.angularFire.database.object('accounts/' + accountId);
   }
 
+  updateAccount(localUpdatedAccount){
+    var accountEntryInFirebase = this.getAccountById(localUpdatedAccount.$key);
+    accountEntryInFirebase.update({name: localUpdatedAccount.name,
+                                description: localUpdatedAccount.description,
+                                goal: localUpdatedAccount.goal});
+  }
+
+  deleteAccount(localAccountToDelete) {
+    var accountEntryInFirebase = this.getAccountById(localAccountToDelete.$key);
+    accountEntryInFirebase.remove();
+  }
+
 }

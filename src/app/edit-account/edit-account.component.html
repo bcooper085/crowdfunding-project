@@ -1,0 +1,15 @@
+<h4>Edit Account</h4>
+
+<label>New Account Name:</label>
+<input [(ngModel)]="selectedAccount.name">
+<br>
+
+<label>New Account Description:</label>
+<input [(ngModel)]="selectedAccount.description">
+<br>
+
+<label>New Account Goal:</label>
+<input [(ngModel)]="selectedAccount.goal">
+
+<button (click)="beginUpdatingAccount(SelectedAccount)">Update</button>
+<button (click)="beginDeletingAccount(selectedAccount)">Delete</button>

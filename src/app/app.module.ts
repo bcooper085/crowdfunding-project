@@ -9,6 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { routing } from './app.routing';
 import { AccountDetailComponent } from './account-detail/account-detail.component';
 import { AdminComponent } from './admin/admin.component';
+import { EditAccountComponent } from './edit-account/edit-account.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
     AppComponent,
     WelcomeComponent,
     AccountDetailComponent,
-    AdminComponent
+    AdminComponent,
+    EditAccountComponent
   ],
   imports: [
     BrowserModule,

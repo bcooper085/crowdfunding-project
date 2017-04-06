@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 import { AccountService } from '../account.service';
 import { Account } from '../account.model';
@@ -13,6 +13,10 @@ export class AdminComponent {
 
   constructor(private accountService: AccountService) { }
 
+  ngOnInit() {
+
+  }
+  
   submitForm(name: string, description: string, goal: number) {
     var newAccount: Account = new Account(name, description, goal);
     this.accountService.addAccount(newAccount);

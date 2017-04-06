@@ -12,6 +12,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class WelcomeComponent implements OnInit {
   accounts: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(private router: Router, private accountService: AccountService) {}
 
