@@ -1,8 +1,8 @@
 export var masterFirebaseConfig = {
-  apiKey: 'AIzaSyBHH4BHcu5R522mjNUG5bguxWVrOQ9mcEQ',
-  authDomain:'im-broke-help.firebaseapp.com',
-  databaseURL: 'https://im-broke-help.firebaseio.com',
-  projectId: 'im-broke-help',
-  storageBucket: 'im-broke-help.appspot.com',
-  messagingSenderId: '803889405211'
+  apiKey: "AIzaSyBqK2Ej1QFq3CJ_5EvjVvK2oQazD6jSSEA",
+    authDomain: "broke-6c057.firebaseapp.com",
+    databaseURL: "https://broke-6c057.firebaseio.com",
+    projectId: "broke-6c057",
+    storageBucket: "broke-6c057.appspot.com",
+    messagingSenderId: "1026530537323"
   };

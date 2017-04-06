@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AccountService } from '../account.service';
+import { Account } from '../account.model';
 
 
 @Component({
@@ -8,16 +9,14 @@ import { AccountService } from '../account.service';
   styleUrls: ['./edit-account.component.css'],
   providers: [AccountService]
 })
-export class EditAccountComponent implements OnInit {
+export class EditAccountComponent {
   @Input() selectedAccount;
 
   constructor(private accountService: AccountService) { }
 
-  ngOnInit() {
-
-  }
 
   beginUpdatingAccount(accountToUpdate) {
+    
     this.accountService.updateAccount(accountToUpdate);
   }
 

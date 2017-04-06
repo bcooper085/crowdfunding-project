@@ -8,7 +8,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css'],
-  providers: [AccountService, AngularFire]
+  providers: [AccountService]
 })
 export class WelcomeComponent implements OnInit {
   accounts: FirebaseListObservable<any[]>;

@@ -9,14 +9,14 @@ import { Account } from '../account.model';
   styleUrls: ['./admin.component.css'],
   providers: [AccountService]
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
 
   constructor(private accountService: AccountService) { }
 
   ngOnInit() {
 
   }
-  
+
   submitForm(name: string, description: string, goal: number) {
     var newAccount: Account = new Account(name, description, goal);
     this.accountService.addAccount(newAccount);

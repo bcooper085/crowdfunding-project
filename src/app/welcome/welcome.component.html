@@ -2,7 +2,7 @@
 
 <div *ngFor="let account of accounts | async" class="panel panel-default">
   <div class="panel-body">
-    <h3 (click)="goToDetailPage(account)"><em>{{account.name}}</em> by {{account.goal}}</h3>
+    <h3 (click)="goToDetailPage(account)"><em>{{account.name}}</em> Donation Goal: ${{account.goal}}</h3>
     <div *ngIf="currentRoute === '/admin'">
       {{account.description}}
       <hr>
