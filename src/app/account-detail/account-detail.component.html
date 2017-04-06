@@ -1,5 +1,5 @@
 <div>
-  <h3>{{accountToDisplay.name}}</h3>
-  <h4>{{accountToDisplay.goal}}</h4>
-  <p>{{accountToDisplay.description}}</p>
+  <h3>{{(accountToDisplay | async)?.name}}</h3>
+  <h4>{{(accountToDisplay | async)?.goal}}</h4>
+  <p>{{(accountToDisplay | async)?.description}}</p>
 </div>

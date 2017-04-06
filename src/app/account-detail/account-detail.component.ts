@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Account } from '../account.model';
 import { AccountService } from '../account.service';
+import { FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
   selector: 'app-account-detail',
@@ -11,8 +12,8 @@ import { AccountService } from '../account.service';
   providers: [AccountService]
 })
 export class AccountDetailComponent implements OnInit {
-  accountId: number;
-  accountToDisplay: Account;
+  accountId: string;
+  accountToDisplay;
 
   constructor(
       private route: ActivatedRoute,
@@ -22,7 +23,7 @@ export class AccountDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.accountId = parseInt(urlParameters['id']);
+      this.accountId = urlParameters['id'];
     });
     this.accountToDisplay = this.accountService.getAccountById(this.accountId);
   }

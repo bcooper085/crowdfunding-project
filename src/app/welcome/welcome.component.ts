@@ -19,8 +19,8 @@ export class WelcomeComponent implements OnInit {
     this.accounts = this.accountService.getAccounts();
   }
 
-  goToDetailPage(clickedAccount: Account) {
-     this.router.navigate(['accounts', clickedAccount.id]);
+  goToDetailPage(clickedAccount) {
+     this.router.navigate(['accounts', clickedAccount.$key]);
    };
 
 

@@ -18,12 +18,8 @@ export class AccountService {
     this.accounts.push(newAccount);
   }
 
-  getAccountById(accountId: number){
-    // for (var i = 0; i <= ACCOUNTS.length - 1; i++) {
-    //   if (ACCOUNTS[i].id === accountId) {
-    //     return ACCOUNTS[i];
-    //   }
-    // }
+  getAccountById(accountId: string){
+    return this.angularFire.database.object('accounts/' + accountId);
   }
 
 }
